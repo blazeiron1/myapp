@@ -1,0 +1,12 @@
+<%- include('partials/header') %>
+<div class="card giphy-card" style="width: 18rem;">
+    <div class="card-giphy"style="background-color: lightblue;font-weight: bold;text-align: center" >
+        Gif details
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%- giphy.name%></li>
+        <li class="list-group-item"><%- giphy.length%></li>
+        <li class="list-group-item"><%- giphy.created_at%></li>
+    </ul>
+</div>
+<%- include('partials/footer') %>

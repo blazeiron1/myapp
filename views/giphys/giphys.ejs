@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+
+    <div class="container">
+
+        <a class="navbar-brand" href="/">
+            <img src="https://giphy.com/static/img/artistdirectory_1040.gif" alt="" width="102%" height="50%">
+        </a>
+
+    </div>
+
+<div class="container pt-4 content-type"style="margin-left: 12px">
+    <div class="row">
+        <% for(var i=0;i<giphy.length;i++){%>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card mb-2 card-style">
+                    <h5 class="card-title">
+                        <a href="/giphys/<%- giphy[i].id%>"><%- giphy[i].title%></a>
+                    </h5>
+                    <div class="item">
+                        <img src="<%- giphy[i].poster_gif%>" class="card-img-top" style=" width: 100%;
+  height:290px;">
+                    </div>
+                    <div class="card-body">
+                    </div>
+                    <div class="p-1 text-end">
+                        <form method="post" action="/giphys/deleteGiphy/<%- giphy[i].id%>">
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </div>
+            </div>
+
+        </div>
+            <%}%>
+    </div>
+</div>
+
+
+
+
+
+
+<%- include('partials/footer') %>

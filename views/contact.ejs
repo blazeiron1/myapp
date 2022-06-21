@@ -1,0 +1,113 @@
+<%- include('partials/header') %>
+<section class="mt-5 contact-style">
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+        a matter of hours to help you.</p>
+    <div class="row">
+
+        <div class="col-md-9 mb-md-0 mb-5">
+
+            <form name="contact-form" action="/giphys/contact" method="POST">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <label for="name">Your name</label>
+                            <input type="text" id="name" name="name"
+                            <% if(formContact.name && formContact.name.value) { %>
+                                   value="<%- formContact.name.value%>"
+                                    <% } %>
+                                   class="form-control" placeholder="Your name">
+
+                        </div>
+                    </div>
+                    <% if(formContact.name && !formContact.name.valid) { %>
+                        <div class="text-danger mt-1 ms-2">
+                            <small><%- formContact.name.errorMsg%></small>
+                        </div>
+                    <% } %>
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <label for="email">Email address</label>
+                            <input type="text" id="email" name="email"
+                            <% if(formContact.email && formContact.email.value) { %>
+                                   value="<%- formContact.email.value%>"
+                                    <% } %>
+                                   class="form-control" placeholder="Your email">
+                        </div>
+                    </div>
+                    <% if(formContact.email && !formContact.email.valid) { %>
+                        <div class="text-danger mt-1 ms-2">
+                            <small><%- formContact.email.errorMsg%></small>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0 mt-2">
+                            <label for="name">Subject</label>
+                            <input type="text" id="subject" name="subject"
+                            <% if(formContact.subject && formContact.subject.value) { %>
+                                   value="<%- formContact.subject.value%>"
+                                    <% } %>
+                                   class="form-control" placeholder="Your Subject">
+                        </div>
+
+                    </div>
+                    <% if(formContact.subject && !formContact.subject.valid) { %>
+                        <div class="text-danger mt-1 ms-2">
+                            <small><%- formContact.subject.errorMsg%></small>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mt-2">
+                            <label for="email">Message</label>
+                            <textarea class="form-control" name="message"
+                                      id="message" rows="3"><% if(formContact.message && formContact.message.value) { %><%- formContact.message.value%><% } %></textarea>
+                        </div>
+
+                    </div>
+                    <% if(formContact.message && !formContact.message.valid) { %>
+                        <div class="text-danger mt-1 ms-2">
+                            <small><%- formContact.message.errorMsg%></small>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="text-center text-md-left mt-2">
+                    <button type="store" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+
+
+            <% if(formContact.valid) {%>
+                <div class="text-success">
+                    <h5>Your message is submitted!</h5>
+                </div>
+            <% }%>
+
+
+        </div>
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt"></i>
+                    <p> 416 W 13th St, New York, NY 10014, United States</p>
+                </li>
+
+                <li>
+                    <p>+ 034 3027 4437</p>
+                </li>
+
+                <li>
+                    <p>blagoja.mitreski@cse.uist.edu.mk</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+<%- include('partials/footer') %>

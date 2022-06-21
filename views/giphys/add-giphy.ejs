@@ -1,0 +1,70 @@
+<%- include('partials/header') %>
+
+<div class="row">
+    <div class="col-lg-12 offset-xl-2 col-sl-8 offset-xxl-3 col-xxl-6">
+
+        <h4 style="text-align: center;color:lightyellow"class="mt-5 mb-3">Add a new gif</h4>
+
+        <form method="post" action="/giphys">
+            <div class="form-floating mb-2">
+                <input id="name" class="form-control" type="text"
+                <% if(formData.name && formData.name.value) { %>
+                       value="<%- formData.name.value%>"
+                        <% } %>
+                       name="name" placeholder="Enter your name">
+                <label for="name">Enter your name</label>
+            </div>
+            <% if(formData.name && !formData.name.valid) { %>
+                <div class="text-danger mt-1 ms-2">
+                    <small><%- formData.name.errorMsg%></small>
+                </div>
+            <% } %>
+            <div class="form-floating mb-2">
+                <input id="title" class="form-control" type="text"
+                <% if(formData.title && formData.title.value) { %>
+                       value="<%- formData.title.value%>"
+                        <% } %>
+
+                       name="title" placeholder="Enter the title">
+                <label for="title">Enter the title</label>
+            </div>
+            <% if(formData.title && !formData.title.valid) { %>
+                <div class="text-danger mt-1 ms-2">
+                    <small><%- formData.title.errorMsg%></small>
+                </div>
+            <% } %>
+            <div class="form-floating mb-2">
+                <input id="length" class="form-control" type="text"
+                <% if(formData.length && formData.length.value) { %>
+                       value="<%- formData.length.value%>"
+                        <% } %>
+                       name="length" placeholder="Size">
+                <label for="duration">Size</label>
+            </div>
+            <% if(formData.length && !formData.length.valid) { %>
+                <div class="text-danger mt-1 ms-2">
+                    <small><%- formData.length.errorMsg%></small>
+                </div>
+            <% } %>
+            <div class="form-floating mb-2">
+                <input id="poster_gif" class="form-control" type="text"
+                <% if(formData.poster_gif && formData.poster_gif.value) { %>
+                       value="<%- formData.poster_gif.value%>"
+                        <% } %>
+                       name="poster_gif" placeholder="Link of the gif">
+                <label for="poster_gif">Link of the gif</label>
+            </div>
+            <% if(formData.poster_gif && !formData.poster_gif.valid) { %>
+                <div class="text-danger mt-1 ms-2">
+                    <small><%- formData.poster_gif.errorMsg%></small>
+                </div>
+            <% } %>
+
+            <div class="text-center">
+                <button class="btn btn-primary" type="submit">Store</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+<%- include('partials/footer') %>

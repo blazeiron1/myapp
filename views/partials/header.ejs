@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title><%- title%></title>
+    <link rel="icon" href="https://assets.materialup.com/uploads/531a40fe-a71e-4bce-bf01-1f06e18ebf98/preview.jpg"/>
+    <link rel='stylesheet' href='/stylesheets/test.css' />
+</head>
+<body class="container" style="background-color: black">
+<div id="page-container">
+    <div id="content-wrap">
+
+<nav class="navbar navbar-expand-lg navbar-dark  p-lg-0 border-bottom-0">
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="https://media3.giphy.com/media/YJBNjrvG5Ctmo/giphy.gif?cid=ecf05e47rp64kys4d238x7kxijgiiew5rwolat8hdn289xdd&rid=giphy.gif&ct=g" alt="" width="70" height="80">
+            </a>
+        </div>
+    </nav>
+    <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link header-style <%- currentPage == 'home'? 'active' : ''%>"  aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link header-style <%- currentPage == 'about'? 'active' : ''%>"  aria-current="page" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link header-style <%- currentPage == 'contact'? 'active' : ''%>"  aria-current="page" href="/giphys/new/contact">Conctact</a>
+                </li>
+
+                <li class="nav-item mt-1 mx-5">
+                    <a href="/login" tabindex="-1"><button class="btn btn-sm btn-outline-primary">Login</button></a>
+                </li>
+                <li class="nav-item mt-1 mx-1">
+                    <a href="/giphys/giphy/new" tabindex="-1"><button class="btn btn-sm btn-outline-primary">Upload</button></a>
+                </li>
+
+
+            </ul>
+            <form class="d-flex ">
+
+                <input class="form-control me-1" type="search"  placeholder="Search" aria-label="Search">
+                <button id="hover" class="btn btn-outline-success"  type="submit">Search</button>
+            </form>
+
+        </div>
+    </div>
+</nav>
+        <div class="container mt-2 ">
